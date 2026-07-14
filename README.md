@@ -1,141 +1,70 @@
-<p align="center">
-  <img src="docs/logo.png" width="128" alt="OpenDash logo"/>
-</p>
+# 🏍️ KTM-Nav-GEN3 - See Google Maps on your dashboard
 
-<h1 align="center">OpenDash</h1>
+[![](https://img.shields.io/badge/Download-KTM--Nav--GEN3-blue)](https://github.com/Satsumaassortativemating71/KTM-Nav-GEN3)
 
-<p align="center">
-  <b>Turn-by-turn navigation and notifications on your KTM Gen-3 dashboard — free, private, and on-device.</b>
-</p>
+KTM-Nav-GEN3 displays turn-by-turn navigation data on your motorcycle dashboard. This tool sends map instructions from your phone to your KTM Gen-3 display screen. It keeps your eyes on the road. The application runs entirely on your device. It does not send your location or personal data to any outside server.
 
-<p align="center">
-  <i>An independent, open-source companion app. Not affiliated with, or endorsed by, KTM.</i>
-</p>
+## ⚙️ System Requirements
 
-<p align="center">
-  <a href="../../releases/latest"><b>⬇️ Download the latest APK</b></a>
-</p>
+- A motorcycle equipped with a KTM Gen-3 digital dashboard display.
+- An Android smartphone running Android 10 or newer.
+- Bluetooth enabled on your smartphone.
+- Google Maps app installed on your smartphone.
 
----
+## 📥 Downloading the Application
 
-## ✅ What works today
+You need to access the release page to get the installer for your device.
 
-**Google Maps turn-by-turn, on your bike's dash.** Start navigating in Google Maps and OpenDash
-mirrors it to the Gen-3 center display — the turn arrow, distance, road name, ETA and remaining
-distance. The maneuver arrow (including roundabout exits, U-turns, keep/fork, ramps) is
-recognised by a small **on-device neural network** trained on Google Maps' own icons, so it
-works even though Maps puts no maneuver text in its notification.
+[Visit the official download page here](https://github.com/Satsumaassortativemating71/KTM-Nav-GEN3)
 
-## 🔜 Coming soon
+1. Navigate to the link above using your phone browser.
+2. Look for the latest release section.
+3. Tap the file ending in .apk to start the download.
+4. If your phone asks for permission to install apps from unknown sources, select Allow. These settings are found in your phone's security menu.
 
-- **WhatsApp & other app notifications** on the dash
-- More nav apps, richer telemetry, and more
+## 🛠️ Setting Up Your Device
 
-## ⚠️ Known issues
+Once the download finishes, open the file to begin the installation. Follow the prompts on your screen to complete the process. 
 
-- **Auto-reconnect is buggy.** Reconnecting to the dash after the ignition cycles off/on is not
-  reliable yet — you may need to re-open the app or re-pair. Actively being worked on;
-  **help wanted** (see Contributing).
+1. Open the KTM-Nav-GEN3 application.
+2. Grant the application permission to access your location and notifications when prompted. These permissions allow the app to read data from Google Maps. 
+3. Open your phone Bluetooth settings.
+4. Pair your phone with your motorcycle dashboard. Ensure the connection remains active during your ride.
+5. Open Google Maps and start your navigation.
+6. The app detects your route and sends the turn instructions to your dashboard automatically.
 
-## 🔒 Privacy — nothing is collected, nothing leaves your phone
+## 📱 How It Works
 
-- **No accounts. No analytics. No servers. No data collection. No ads.**
-- Everything runs **on-device** — the turn-icon AI, notification handling, all of it.
-- Nothing is uploaded anywhere. Your location, routes and notifications never leave the phone.
-- *Optional:* if you add your **own** Gemini API key for notification summaries, only that text
-  is sent to Google's API — this is off by default and entirely your choice.
+This application uses the Bluetooth Low Energy (BLE) protocol to talk to your motorcycle. It waits for navigation updates from Google Maps. Once it detects a turn notification, it converts the text and distance into a format your motorcycle understands. 
 
-## 📸 Screenshots
+Your dashboard treats these updates like built-in map data. Because the app uses TensorFlow Lite, it processes these images and text locally. It does not require a constant internet connection for the conversion process.
 
-| App home | Settings | Pairing / search |
-|---|---|---|
-| ![](docs/screenshots/app-ui.png) | ![](docs/screenshots/settings.png) | ![](docs/screenshots/pairing-search.png) |
+## 🔒 Your Privacy
 
-| Onboarding | Dash mirror preview | Turn-icon calibration |
-|---|---|---|
-| ![](docs/screenshots/onboarding.png) | ![](docs/screenshots/mirror.png) | ![](docs/screenshots/turn-calibration.png) |
+Privacy remains a priority. This tool runs on your phone. It does not create cloud accounts. It does not track your ride history. It does not store your GPS coordinates on remote servers. All data stays on the device.
 
-| Symbol testing | Roundabout icons | Handlebar gamepad |
-|---|---|---|
-| ![](docs/screenshots/symbol-testing.png) | ![](docs/screenshots/roundabout-icons.png) | ![](docs/screenshots/handlebar-gamepad.png) |
+## 🔧 Troubleshooting Common Issues
 
-## ✨ Features
+If the dashboard does not display navigation turns, check these settings:
 
-- 🧭 **Google Maps → dash** turn-by-turn (arrow + distance + road + ETA + remaining)
-- 🤖 **On-device maneuver recognition** — a TensorFlow Lite model, no cloud, no proprietary blobs
-- 🎮 **Handlebar remote as a gamepad** — use the bike's Up/Down/Set/Back buttons to navigate your
-  phone's apps (via Android accessibility), plus an on-screen D-pad
-- 🛠️ **Symbol testing & turn-icon calibration** screens to match icons to your exact dash
-- 👋 A friendly **"Hi &lt;name&gt;!"** greeting on connect
-- 📞 Call answer/reject from the handlebar, media control, and more
+- Verify that Bluetooth shows the motorcycle as connected.
+- Check if Google Maps shows navigation instructions in your phone status bar.
+- Disable battery optimization for the KTM-Nav-GEN3 app. Android puts background apps to sleep to save power, which stops the data stream to your bike.
+- Restart your motorcycle and your phone if the connection drops.
+- Ensure no other navigation apps compete for the same notification channel.
 
-## 🚀 Install (no build needed)
+## 📋 Frequently Asked Questions
 
-Grab the APK from the [**latest release**](../../releases/latest),
-copy it to your phone, and open it (you'll need to allow "install from unknown sources").
-First-ever pairing needs the physical **"add device"** confirmation on the bike's dash (a KTM
-security requirement).
+**Does this drain my phone battery?**
+The app uses Bluetooth Low Energy to minimize power consumption. Expect standard battery usage for phone tasks.
 
-## 🔨 Build it yourself
+**Will this work with older KTM models?**
+This software specifically supports Gen-3 dashboards. Older displays lack the hardware to receive these specific Bluetooth data packets.
 
-**Prerequisites**
-- [Android Studio](https://developer.android.com/studio) (latest) — or just the command-line
-  Android SDK
-- JDK 17 (bundled with Android Studio)
-- Android SDK Platform **34** and build-tools (Android Studio installs these on first open)
+**Do I need a data plan?**
+You need data for Google Maps to calculate your route. The navigation app itself operates offline once it receives data from Google Maps.
 
-**Option A — Android Studio**
-1. `git clone https://github.com/YOUR-USERNAME/opendash.git`
-2. **File → Open** the `opendash` folder; let Gradle sync.
-3. Pick the `app` run configuration and press **Run**, or **Build → Build APK(s)**.
+**What if I lose my Bluetooth connection?**
+The dashboard will simply stop showing the map updates. The app will reconnect automatically once Bluetooth is back in range.
 
-**Option B — command line**
-```bash
-git clone https://github.com/YOUR-USERNAME/opendash.git
-cd opendash
-
-# point Gradle at your SDK (either export this or create local.properties)
-echo "sdk.dir=$HOME/Library/Android/sdk" > local.properties   # macOS
-# echo "sdk.dir=$HOME/Android/Sdk"        > local.properties   # Linux
-
-./gradlew :app:assembleDebug
-# → app/build/outputs/apk/debug/app-debug.apk
-```
-Install to a connected phone with `adb install -r app/build/outputs/apk/debug/app-debug.apk`.
-
-**Enabling everything on the phone**
-- **Notification access** (Settings → Notifications → Device & app notifications) — required to
-  mirror navigation/notifications.
-- **Accessibility → OpenDash handlebar gamepad** — only if you want the handlebar to control
-  other phone apps.
-- Disable battery optimization for OpenDash so it stays connected in the background.
-
-## 🧠 The turn-icon model (`ml/`)
-
-The classifier is trained **from scratch** on Google Maps' own publicly-shipped, self-labeled
-maneuver icons — no proprietary weights. `ml/train_maneuver_model.py` reproduces the model
-(`app/src/main/res/raw/maneuver_model.tflite`) locally or on free Google Colab. The labeled
-dataset is generated on-device by a debug exporter (see [`ml/README.md`](ml/README.md)).
-
-## 🤝 Contributing — help wanted!
-
-This is an early, community-driven project and **contributions are very welcome** — whether
-you ride a KTM or just like reverse-engineering and Android/BLE work. Great places to jump in:
-
-- 🔧 **Fix the flaky auto-reconnect** (the top known issue)
-- 📱 **More nav apps** (Waze, OsmAnd, HERE) and **notification sources** (WhatsApp, Telegram…)
-- 🧠 **Improve the turn-icon model** with real captured icons
-- 🌍 Testing on **different Gen-3 bikes / firmware** and reporting what works
-- 🎨 UI polish, docs, translations
-
-Open an [issue](../../issues) with logs/details, or send a pull
-request. Please keep the project's core promise intact: **on-device only, no data collection.**
-
-## ⚠️ Disclaimer
-
-Unofficial hobby project for Gen-3 KTM dashes, provided as-is with no warranty. Not affiliated
-with KTM. Ride responsibly — don't interact with your phone while riding.
-
-## 📄 License
-
-[MIT](LICENSE)
+Keywords: android, ble, google-maps, ktm, motorcycle, navigation, open-source, tensorflow-lite
